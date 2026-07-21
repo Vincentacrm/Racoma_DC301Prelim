@@ -47,10 +47,10 @@ function undoLesson() {
       :track="learner.track"
       :studentId="learner.studentId"
     />
-
-    <h2>
-      Course Status:<br>
-        {{ status ? "In Progress" : "Completed" }}
+    <h2>Course Status:<br></h2>
+    <h2 :class="status ? 'in-progress' : 'completed'">
+    
+    {{ status ? "In Progress" : "Completed" }}
     </h2>
 
     <h2>Completed Lessons: {{ completedLessons }}</h2>
@@ -68,4 +68,12 @@ function undoLesson() {
       {{ courses.length >= 5 ? "Advanced Learner" : "Beginner Learner" }}
     </h2>
 </template>
+<style>
+.in-progress {
+  color: green;
+}
 
+.completed {
+  color: red;
+}
+</style>
